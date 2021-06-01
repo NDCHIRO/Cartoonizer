@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "58486092557",
+    "project_id": "graduation-project-da620",
+    "storage_bucket": "graduation-project-da620.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:58486092557:android:094c8d49dd342aca047644",
+        "android_client_info": {
+          "package_name": "com.tflite.whitebox_cartoon_gan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "58486092557-fglv20klh790udt9ipa8np80tk4rvd1t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAzDzlFrOreZrMKNi-WmCGBc7msvLgEXIU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "58486092557-fglv20klh790udt9ipa8np80tk4rvd1t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
