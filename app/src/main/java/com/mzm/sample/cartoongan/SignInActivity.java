@@ -33,7 +33,12 @@ public class SignInActivity extends AppCompatActivity {
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
+        //set theme
+        //setTheme(R.style.splashScreenTheme);
+        //setTheme(android.R.style.Theme_Dark);
+
         setContentView(R.layout.activity_sign_in);
 
         //Initialize Firebase Auth
@@ -41,7 +46,7 @@ public class SignInActivity extends AppCompatActivity {
         if(firebaseAuth.getCurrentUser()!=null)
         {
             //opening profile activity
-            Intent dashboardIntent = new Intent(this, MainActivity.class);
+            Intent dashboardIntent = new Intent(this, DashboardActivity.class);
             //dashboardIntent.putExtra("mail", firebaseAuth.getCurrentUser().getEmail());
             startActivity(dashboardIntent);
         }

@@ -8,4 +8,12 @@
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.null.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="splashScreenTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:windowBackground">@drawable/slpash_image</item>
+        <item name="android:statusBarColor">@color/white</item>
+
+    </style>>
+
+
 </resources>
+

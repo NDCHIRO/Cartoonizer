@@ -4,7 +4,8 @@
     <!-- Make sure there is at least one camera -->
     <uses-feature android:name="android.hardware.camera.any" /> <!-- Ask for camera permission -->
     <uses-permission android:name="android.permission.CAMERA" />
-
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -12,7 +13,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DashboardActivity"></activity>
+        <activity android:name=".StyleGAN2CartoonActivity"></activity>
+        <activity android:name=".DashboardActivity" />
         <activity android:name=".SignUpActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".SignInActivity">

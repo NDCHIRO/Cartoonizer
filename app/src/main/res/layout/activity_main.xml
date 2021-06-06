@@ -10,7 +10,7 @@
         android:id="@+id/toolbar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="?attr/colorPrimary"
+        android:background="#03A9F4"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,6 +24,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:defaultNavHost="true"
+        app:layout_constraintTop_toTopOf="parent"
         app:navGraph="@navigation/nav_graph"
         tools:context="com.mzm.sample.cartoongan.MainActivity" />
 </androidx.constraintlayout.widget.ConstraintLayout>
