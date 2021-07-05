@@ -4,6 +4,8 @@ import android.net.Uri;
 import android.os.FileUtils;
 import android.util.Log;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.io.File;
 
 import okhttp3.MediaType;
@@ -92,5 +94,19 @@ class ServiceGenerator {
     public static <S> S createService(
             Class<S> serviceClass) {
         return retrofit.create(serviceClass);
+    }
+}
+
+class ServerResponse {
+    // variable name should be same as in the json response from php
+    @SerializedName("success")
+    boolean success;
+    @SerializedName("message")
+    String message;
+    String getMessage() {
+        return message;
+    }
+    boolean getSuccess() {
+        return success;
     }
 }

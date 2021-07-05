@@ -13,4 +13,9 @@
         android:title="share"
         app:showAsAction="always"
         android:visible="false"/>
+
+    <item android:id="@+id/camera_image"
+        android:title="camera"
+        android:icon="@android:drawable/ic_menu_camera"
+        app:showAsAction="always"/>
 </menu>

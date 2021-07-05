@@ -17,6 +17,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.muddzdev.styleabletoast.StyleableToast;
 import com.mzm.sample.cartoongan.DashboardActivity;
 import com.mzm.sample.cartoongan.R;
 
@@ -46,9 +47,12 @@ public class SignInActivity extends AppCompatActivity {
         if(firebaseAuth.getCurrentUser()!=null)
         {
             //opening profile activity
+            //Toast .makeText(SignInActivity.this,"welcome "+firebaseAuth.getCurrentUser().getEmail(),Toast.LENGTH_LONG).show();
+            StyleableToast.makeText(SignInActivity.this, "welcome "+firebaseAuth.getCurrentUser().getEmail(), Toast.LENGTH_LONG, R.style.mytoast).show();
             Intent dashboardIntent = new Intent(this, DashboardActivity.class);
             //dashboardIntent.putExtra("mail", firebaseAuth.getCurrentUser().getEmail());
             startActivity(dashboardIntent);
+            finish();
         }
 
         emailEt=findViewById(R.id.email);
@@ -69,6 +73,7 @@ public class SignInActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent=new Intent(SignInActivity.this, SignUpActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
 

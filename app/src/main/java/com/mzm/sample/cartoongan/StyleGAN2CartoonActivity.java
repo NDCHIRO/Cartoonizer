@@ -28,6 +28,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+
 public class StyleGAN2CartoonActivity extends AppCompatActivity {
     ImageView realFaceImView;
     ImageView styleGan2imView;
@@ -44,59 +47,20 @@ public class StyleGAN2CartoonActivity extends AppCompatActivity {
         realFaceImView = findViewById(R.id.realFaceImageView);
         styleGan2imView = findViewById(R.id.styleGAN2ImageView);
         textView2 = findViewById(R.id.textView2);
-        /*try {
-            URL url = new URL("https://api.deepai.org/api/toonify");
-            HttpURLConnection c = (HttpURLConnection) url.openConnection();
-            c.setDoInput(true);
-            c.setRequestMethod("POST");
-            c.setDoOutput(true);
-            c.connect();
-            Bitmap bitmap = BitmapFactory.decodeResource(getResources(),R.drawable.high_res_face);
-            OutputStream output = c.getOutputStream();
-            bitmap.compress(Bitmap.CompressFormat.JPEG, 50, output);
-            output.close();
 
-            Scanner result = new Scanner(c.getInputStream());
-            String response = result.nextLine();
-            Log.e("ImageUploader", "Error uploading image: " + response);
-            textView2.setText("ImageUploader"+ "Error uploading image: " + response);
-            result.close();
-        } catch (IOException e) {
-            Log.e("ImageUploader", "Error uploading image", e);
-        }*/
+    }
 
-// Add the request to the RequestQueue.
-        //queue.add(stringRequest);
-        //establish connection
-        /*URL url = null;
-        try {
-            url = new URL("https://api.deepai.org/api/toonify");
-            HttpURLConnection con = (HttpURLConnection) url.openConnection();
-            con.setRequestMethod("POST");
 
-            Map<String, String> parameters = new HashMap<>();
-            parameters.put("param1", "val");
+}
 
-            con.setDoOutput(true);
-            DataOutputStream out = new DataOutputStream(con.getOutputStream());
-            out.writeBytes(ParameterStringBuilder.getParamsString(parameters));
-            out.flush();
-            out.close();
 
-            con.setRequestProperty("Content-Type", "application/json");
-
-            con.setConnectTimeout(5000);
-            con.setReadTimeout(5000);
-        }
-        catch (MalformedURLException e) {
-            e.printStackTrace();
-        } catch (ProtocolException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-    }*/
+class AppConfig {
+    private static String BASE_URL = "'https://api.deepai.org/api/toonify";
+    static Retrofit getRetrofit() {
+        return new Retrofit.Builder()
+                .baseUrl(AppConfig.BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
     }
 }
 

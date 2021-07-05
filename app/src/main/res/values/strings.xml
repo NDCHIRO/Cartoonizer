@@ -4,6 +4,12 @@
     <string name="tflite_model" translatable="false">TFLite Model:</string>
     <string name="share_button_alt">Share</string>
     <string name="save_button_alt">Save</string>
+    <string name="styleGAN2">styleGAN2</string>
+    <string name="CartoonGAN">CartoonGAN</string>
+    <string name="style_transfer">style transfer</string>
+    <string name="AR">Augmented reality</string>
+    <string name="filters">filters</string>
+
     <string-array name="tflite_models" translatable="false">
         <item>Model: White-box CartoonGan Dynamic Range</item>
         <item>Model: White-box CartoonGan Fp16</item>
