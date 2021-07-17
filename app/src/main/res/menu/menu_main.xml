@@ -14,8 +14,11 @@
         app:showAsAction="always"
         android:visible="false"/>
 
-    <item android:id="@+id/camera_image"
-        android:title="camera"
+    <item
+        android:id="@+id/camera_image"
+        android:enabled="false"
         android:icon="@android:drawable/ic_menu_camera"
-        app:showAsAction="always"/>
+        android:title="camera"
+        android:visible="true"
+        app:showAsAction="always" />
 </menu>

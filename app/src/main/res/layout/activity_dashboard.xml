@@ -36,7 +36,7 @@
             android:text="@string/AR" />
 
         <Button
-            android:id="@+id/button9"
+            android:id="@+id/buttonFilters"
             android:layout_width="match_parent"
             android:layout_height="102dp"
             android:text="@string/filters" />

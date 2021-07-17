@@ -40,6 +40,7 @@ public class SignUpActivity extends AppCompatActivity {
         SignUpButton=findViewById(R.id.register);
 
 
+
         progressDialog=new ProgressDialog(this);
         SignInTv=findViewById(R.id.signInTv);
         SignUpButton.setOnClickListener(new View.OnClickListener() {

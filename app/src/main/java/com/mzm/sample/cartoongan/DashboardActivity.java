@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.mzm.sample.cartoongan.filters.camerafilter.FiltersActivity;
 import com.mzm.sample.cartoongan.style_transfer.StyleTansferActivity;
 
 
@@ -15,6 +16,7 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
     Button cartoonGANBtn;
     Button styleGAN2Btn;
     Button styleTransferBtn;
+    Button filtersBtn;
     Button ARBtn;
     String TAG="1";
     @Override
@@ -34,7 +36,14 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
         ARBtn=findViewById(R.id.AugRealityBtn);
         ARBtn.setOnClickListener(this);
 
+        filtersBtn=findViewById(R.id.buttonFilters);
+        filtersBtn.setOnClickListener(this);
+
+
+
     }
+
+
 
     @Override
     public void onClick(View v)
@@ -63,6 +72,11 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
                 /*intent = new Intent(this, MainActivity.class);
                 startActivity(intent);
                 finish();*/
+        }
+
+        else if (v.getId() == R.id.buttonFilters) {
+            Intent intent = new Intent(DashboardActivity.this, FiltersActivity.class);
+            startActivity(intent);
         }
         else {
             Toast.makeText(DashboardActivity.this, "function not implemented yet", Toast.LENGTH_SHORT).show();
