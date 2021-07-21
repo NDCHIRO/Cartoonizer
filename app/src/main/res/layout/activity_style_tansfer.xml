@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".style_transfer.StyleTansferActivity">
+    tools:context=".MainActivity">
 
     <ImageView
         android:id="@+id/camera_image"
@@ -77,20 +77,18 @@
         app:layout_constraintStart_toStartOf="parent"
         android:background="@android:color/holo_orange_light"/>
 
-    <Button
-        android:id="@+id/cameraBtn"
-        android:layout_width="97dp"
-        android:layout_height="43dp"
-        android:background="#FFFFFF"
-        android:backgroundTint="#FFFFFF"
-        android:fallbackLineSpacing="false"
-        android:isScrollContainer="false"
-        android:text="@string/camera"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.949"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.148" />
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

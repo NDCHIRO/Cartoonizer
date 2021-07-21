@@ -12,46 +12,75 @@
         android:orientation="vertical">
 
         <Button
+
             android:id="@+id/cartoonGANBtn"
             android:layout_width="match_parent"
             android:layout_height="107dp"
-            android:text="@string/CartoonGAN" />
+            android:background="#2196F3"
+
+            android:text="@string/CartoonGAN"
+            />
 
         <Button
             android:id="@+id/styleGAN2Btn"
             android:layout_width="match_parent"
             android:layout_height="102dp"
+            android:background="#8003A8F4"
             android:text="@string/styleGAN2" />
 
         <Button
             android:id="@+id/styleTransferBtn"
             android:layout_width="match_parent"
             android:layout_height="103dp"
+            android:background="#00A3D4"
             android:text="@string/style_transfer" />
 
         <Button
             android:id="@+id/AugRealityBtn"
             android:layout_width="match_parent"
             android:layout_height="102dp"
+            android:background="#A8009688"
             android:text="@string/AR" />
 
         <Button
             android:id="@+id/buttonFilters"
             android:layout_width="match_parent"
             android:layout_height="102dp"
+            android:background="#3F51B5"
             android:text="@string/filters" />
 
-        <Button
-            android:id="@+id/button10"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="102dp"
-            android:text="Button" />
+            android:layout_height="match_parent">
 
-        <Button
-            android:id="@+id/button11"
-            android:layout_width="match_parent"
-            android:layout_height="102dp"
-            android:text="Button" />
+            <Button
+                android:id="@+id/button5"
+                android:layout_width="93dp"
+                android:layout_height="71dp"
+                android:background="@drawable/contact"
+                android:text="contact Us"
+                android:textColor="#3F51B5"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.893"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.298" />
+
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="84dp"
+                android:layout_height="72dp"
+                android:background="@drawable/bulb"
+                android:text="ideas"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.048"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.293" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </LinearLayout>
 </androidx.appcompat.widget.LinearLayoutCompat>

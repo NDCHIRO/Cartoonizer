@@ -18,6 +18,7 @@ package com.mzm.sample.cartoongan.filters.camerafilter;
 import android.Manifest;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.view.GestureDetector;
@@ -29,11 +30,15 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.Toast;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import com.mzm.sample.cartoongan.R;
+import com.mzm.sample.cartoongan.dailog;
+import com.mzm.sample.cartoongan.dailog;
 //import com.mzm.sample.cartoongan.filters.camerafilter.filter.R;
 
 import java.io.File;
@@ -46,9 +51,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 
-/**
- * @author nekocode (nekocode.cn@gmail.com)
- */
+
 public class FiltersActivity extends AppCompatActivity implements GestureDetector.OnGestureListener {
     private static final int REQUEST_CAMERA_PERMISSION = 101;
     private FrameLayout container;
@@ -80,12 +83,21 @@ public class FiltersActivity extends AppCompatActivity implements GestureDetecto
 
     GestureDetector mGestureDetector;
 
+    Toolbar toolbar;
+
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(container = new FrameLayout(this));
         setTitle(TITLES[mCurrentFilterId]);
+        //setContentView(R.layout.activity_filters);
 
+        toolbar=findViewById(R.id.toolbar3);
+        setSupportActionBar(toolbar);
+
+        dailog alert = new dailog();
+        alert.showDialog(FiltersActivity.this, "please move up and down to see other filters");
 
         if (ContextCompat.checkSelfPermission(this,
                 Manifest.permission.CAMERA)
@@ -124,6 +136,7 @@ public class FiltersActivity extends AppCompatActivity implements GestureDetecto
         textureView = new TextureView(this);
         container.addView(textureView);
         textureView.setSurfaceTextureListener(renderer);
+
 
 //        textureView.setOnTouchListener(this);
         textureView.setOnTouchListener(new View.OnTouchListener() {

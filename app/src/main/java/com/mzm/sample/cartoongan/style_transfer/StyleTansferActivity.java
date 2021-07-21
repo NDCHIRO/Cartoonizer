@@ -24,6 +24,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
+import androidx.appcompat.widget.Toolbar;
 
 import com.mzm.sample.cartoongan.R;
 
@@ -39,6 +40,8 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class StyleTansferActivity extends AppCompatActivity {
+
+    //region ----- Instance Variables -----
 
     //region ----- Instance Variables -----
 
@@ -61,11 +64,8 @@ public class StyleTansferActivity extends AppCompatActivity {
     private int desiredSize = 256;
     private int[] intValues = new int[desiredSize * desiredSize];
 
-    private float[] floatValues = new float[desiredSize * desiredSize * 3];
-
-    Button cameraBtn;
-    Bitmap bitmap;
-
+    private float[] floatValues = new float[desiredSize * desiredSize * 3];;
+    Toolbar toolbar;
     //endregion
 
     //region ----- Bind Elements -----
@@ -75,8 +75,7 @@ public class StyleTansferActivity extends AppCompatActivity {
 
     //endregion
 
-    //region ----- OnClick Listeners -----
-
+    //region ----- Bind Elements -----
     @OnClick({R.id.style_1, R.id.style_2, R.id.style_3})
     public void onStyleBtnClicked(View view) {
 
@@ -115,34 +114,17 @@ public class StyleTansferActivity extends AppCompatActivity {
         setContentView(R.layout.activity_style_tansfer);
 
         ButterKnife.bind(this);
-        cameraBtn=findViewById(R.id.cameraBtn);
+        toolbar = findViewById(R.id.toolbar2);
         inferenceInterface = new TensorFlowInferenceInterface(getAssets(), MODEL_FILE);
-
-
-        cameraBtn.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v) {
-                File imageFile = new File(android.os.Environment.getExternalStorageDirectory(), "temp.jpg");
-
-                fileUri = Uri.fromFile(imageFile);
-                //fileUri = FileProvider.getUriForFile(MainActivity.this, BuildConfig.APPLICATION_ID + ".provider",imageFile);
-                Log.d("null wla l2", "onClick: "+fileUri);
-
-                Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
-                intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-                intent.putExtra(MediaStore.EXTRA_OUTPUT, fileUri);
-                startActivityForResult(intent, OPEN_CAMERA_FOR_CAPTURE);
-            }
-        });
+        setSupportActionBar(toolbar);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu_main, menu);
-        return super.onCreateOptionsMenu(menu);
-        //return true;
+
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.menu_style_transfer, menu);
+        return true;
     }
 
     @Override
@@ -153,11 +135,8 @@ public class StyleTansferActivity extends AppCompatActivity {
             File imageFile = new File(android.os.Environment.getExternalStorageDirectory(), "temp.jpg");
 
             fileUri = Uri.fromFile(imageFile);
-            //fileUri = FileProvider.getUriForFile(MainActivity.this, BuildConfig.APPLICATION_ID + ".provider",imageFile);
-
 
             Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
-            intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
             intent.putExtra(MediaStore.EXTRA_OUTPUT, fileUri);
             startActivityForResult(intent, OPEN_CAMERA_FOR_CAPTURE);
 
@@ -209,44 +188,19 @@ public class StyleTansferActivity extends AppCompatActivity {
 
     //region ----- Helper Methods -----
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (requestCode == OPEN_CAMERA_FOR_CAPTURE && resultCode == Activity.RESULT_OK) {
-            Log.d("tmam", "onActivityResult: ");
-            System.out.println("data: "+data+"ss  "+data.getData());
+
             try {
-                Log.d("null?", "onClick: "+fileUri);
-                StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
-                StrictMode.setVmPolicy(builder.build());
-                File file = new File(this.getFilesDir(), "temp.jpg");
-                /*try (ParcelFileDescriptor pfd = this.getContentResolver().openFileDescriptor(fileUri, "r")) {
-                    Log.d("null?", "pfd "+pfd);
 
-                    if (pfd != null) {*/
-                        //bitmap = BitmapFactory.decodeFileDescriptor(pfd.getFileDescriptor());
-                //Uri uri=file.();
-                        Bitmap bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), fileUri);
-                        cameraImageView.setImageBitmap(bitmap);
-                        Log.d("m4 null?", "onClick: "+fileUri);
-
-                /*} catch (IOException ex) {
-                    ex.printStackTrace();
-                }*/
-                //Log.d("tmam awy", "onActivityResult: ");
+                cameraImageView.setImageBitmap(getScaledBitmap(fileUri));
             } catch (NullPointerException e) {
-                e.printStackTrace();
-                Log.d("m4 tmam awy", "onActivityResult: ");
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
                 e.printStackTrace();
             }
         }
-        else
-        Log.d("m4 tmam", "onActivityResult: ");
     }
 
     public Bitmap getScaledBitmap(Uri fileUri) {
@@ -282,7 +236,7 @@ public class StyleTansferActivity extends AppCompatActivity {
 
         }
         catch (Exception ex) {
-
+            ex.printStackTrace();
         }
 
         return scaledPhoto;
