@@ -23,4 +23,19 @@ Android Studio ML Model Binding was used to import these models into the Android
 * You will then see a screen with both the selfie and anime image.
 
 ## features
-#Game
+1- cartoonGAN
+2- Style transfer
+3- CycleGAN
+4- Augmanted reality
+5- game
+
+##cartoonGAN
+The white-box CartooGAN TensorFlow Lite models (with metatdata) are available on TensorFlow Hub in three different formats:
+Dynamic-range
+Integer
+float16
+![image](https://user-images.githubusercontent.com/60838458/126578239-7c5c7afb-6044-4312-b5a0-192b53e6dc75.png)
+
+paper: https://openaccess.thecvf.com/content_cvpr_2018/papers/Chen_CartoonGAN_Generative_Adversarial_CVPR_2018_paper.pdf
+helpful resources: https://blog.tensorflow.org/2020/09/how-to-create-cartoonizer-with-tf-lite.html
+
