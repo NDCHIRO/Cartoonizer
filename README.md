@@ -21,3 +21,6 @@ Android Studio ML Model Binding was used to import these models into the Android
 * select the type you want (cycleGAN , styleGAN2 , cycleGAN).
 * Take a selfie or a photo and wait to process the selfie. 
 * You will then see a screen with both the selfie and anime image.
+
+### features
+#Game
