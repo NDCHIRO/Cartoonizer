@@ -34,7 +34,9 @@ The white-box CartooGAN TensorFlow Lite models (with metatdata) are available on
 Dynamic-range
 Integer
 float16
+
 ![image](https://user-images.githubusercontent.com/60838458/126578239-7c5c7afb-6044-4312-b5a0-192b53e6dc75.png)
+
 
 paper: https://openaccess.thecvf.com/content_cvpr_2018/papers/Chen_CartoonGAN_Generative_Adversarial_CVPR_2018_paper.pdf
 helpful resources: https://blog.tensorflow.org/2020/09/how-to-create-cartoonizer-with-tf-lite.html
