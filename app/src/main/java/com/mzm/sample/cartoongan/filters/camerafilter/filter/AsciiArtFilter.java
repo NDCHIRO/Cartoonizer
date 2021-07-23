@@ -21,9 +21,6 @@ import android.opengl.GLES20;
 import com.mzm.sample.cartoongan.R;
 import com.mzm.sample.cartoongan.filters.camerafilter.MyGLUtils;
 
-/**
- * @author nekocode (nekocode.cn@gmail.com)
- */
 public class AsciiArtFilter extends CameraFilter {
     private int program;
 

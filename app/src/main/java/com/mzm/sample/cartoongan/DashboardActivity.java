@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.google.firebase.auth.FirebaseAuth;
 import com.mzm.sample.cartoongan.filters.camerafilter.FiltersActivity;
 import com.mzm.sample.cartoongan.style_transfer.StyleTansferActivity;
 
@@ -20,6 +21,7 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
     Button styleTransferBtn;
     Button filtersBtn;
     Button ARBtn;
+    Button logOut;
     ImageView imageView;
     String TAG="1";
     @Override
@@ -48,7 +50,8 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
         filtersBtn=findViewById(R.id.buttonFilters);
         filtersBtn.setOnClickListener(this);
 
-
+        logOut=findViewById(R.id.buttonLgoOut);
+        logOut.setOnClickListener(this);
 
     }
 
@@ -70,10 +73,10 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
         }
 
         else if (v.getId() == R.id.styleGAN2Btn) {
-            Toast.makeText(DashboardActivity.this, "styleGAN2 not implemented yet", Toast.LENGTH_SHORT).show();
-                /*intent = new Intent(this, MainActivity.class);
+            //Toast.makeText(DashboardActivity.this, "styleGAN2 not implemented yet", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(this, StyleGAN2CartoonActivity.class);
                 startActivity(intent);
-                finish();*/
+                finish();
         }
 
         else if (v.getId() == R.id.AugRealityBtn) {
@@ -85,6 +88,13 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
 
         else if (v.getId() == R.id.buttonFilters) {
             Intent intent = new Intent(DashboardActivity.this, FiltersActivity.class);
+            startActivity(intent);
+        }
+        else if (v.getId() == R.id.buttonLgoOut) {
+            FirebaseAuth.getInstance().signOut();
+            Toast.makeText(DashboardActivity.this, "Sign out successfully", Toast.LENGTH_SHORT).show();
+
+            Intent intent = new Intent(DashboardActivity.this, SignInActivity.class);
             startActivity(intent);
         }
         else {

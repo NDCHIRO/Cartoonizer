@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Activity;
 import android.content.ClipData;
 import android.content.Intent;
+import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
@@ -43,8 +44,6 @@ public class StyleTansferActivity extends AppCompatActivity {
 
     //region ----- Instance Variables -----
 
-    //region ----- Instance Variables -----
-
     private TensorFlowInferenceInterface inferenceInterface;
 
     private static final String MODEL_FILE = "file:///android_asset/stylize_quantized.pb";
@@ -75,7 +74,8 @@ public class StyleTansferActivity extends AppCompatActivity {
 
     //endregion
 
-    //region ----- Bind Elements -----
+    //region ----- OnClick Listeners -----
+
     @OnClick({R.id.style_1, R.id.style_2, R.id.style_3})
     public void onStyleBtnClicked(View view) {
 
@@ -114,8 +114,10 @@ public class StyleTansferActivity extends AppCompatActivity {
         setContentView(R.layout.activity_style_tansfer);
 
         ButterKnife.bind(this);
-        toolbar = findViewById(R.id.toolbar2);
+
         inferenceInterface = new TensorFlowInferenceInterface(getAssets(), MODEL_FILE);
+
+        toolbar = findViewById(R.id.toolbar2);
         setSupportActionBar(toolbar);
     }
 
@@ -206,16 +208,16 @@ public class StyleTansferActivity extends AppCompatActivity {
     public Bitmap getScaledBitmap(Uri fileUri) {
 
         Bitmap scaledPhoto = null;
-
+        String picturePath = getRealPathFromURI(fileUri, this);
         try {
 
             // Get the dimensions of the bitmap
             BitmapFactory.Options bmOptions = new BitmapFactory.Options();
             bmOptions.inJustDecodeBounds = true;
 
-            Bitmap bitmap = BitmapFactory.decodeFile(fileUri.getPath());
+            Bitmap bitmap = BitmapFactory.decodeFile(picturePath);
 
-            ExifInterface ei = new ExifInterface(fileUri.getPath());
+            ExifInterface ei = new ExifInterface(picturePath);
             int orientation = ei.getAttributeInt(ExifInterface.TAG_ORIENTATION, ExifInterface.ORIENTATION_UNDEFINED);
 
             // if orientation is 6 or 3 then the photo taken is portrait
@@ -233,10 +235,10 @@ public class StyleTansferActivity extends AppCompatActivity {
 
             // Scaling down the original image taken from camera
             scaledPhoto = Bitmap.createScaledBitmap(bitmap, desiredSize, desiredSize, false);
-
         }
+
         catch (Exception ex) {
-            ex.printStackTrace();
+
         }
 
         return scaledPhoto;
@@ -252,5 +254,22 @@ public class StyleTansferActivity extends AppCompatActivity {
         return retVal;
     }
 
+    public String getRealPathFromURI(Uri contentURI, Activity context) {
+        String[] projection = { MediaStore.Images.Media.DATA };
+        @SuppressWarnings("deprecation")
+        Cursor cursor = context.managedQuery(contentURI, projection, null,
+                null, null);
+        if (cursor == null)
+            return null;
+        int column_index = cursor
+                .getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
+        if (cursor.moveToFirst()) {
+            String s = cursor.getString(column_index);
+            // cursor.close();
+            return s;
+        }
+        // cursor.close();
+        return null;
+    }
     //endregion
 }

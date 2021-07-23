@@ -57,15 +57,14 @@
                 android:id="@+id/button5"
                 android:layout_width="93dp"
                 android:layout_height="71dp"
+                android:layout_marginStart="276dp"
                 android:background="@drawable/contact"
                 android:text="contact Us"
                 android:textColor="#3F51B5"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.893"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.298" />
+                app:layout_constraintVertical_bias="0.323" />
 
             <Button
                 android:id="@+id/button4"
@@ -79,6 +78,18 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.293" />
+
+            <Button
+                android:id="@+id/buttonLgoOut"
+                android:layout_width="60dp"
+                android:layout_height="57dp"
+                android:layout_marginStart="28dp"
+                android:background="@drawable/logout2"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.898" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
