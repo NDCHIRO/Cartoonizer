@@ -29,7 +29,7 @@ Android Studio ML Model Binding was used to import these models into the Android
 4- Augmanted reality
 5- game
 
-##cartoonGAN
+## cartoonGAN
 The white-box CartooGAN TensorFlow Lite models (with metatdata) are available on TensorFlow Hub in three different formats:
 Dynamic-range
 Integer
