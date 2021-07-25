@@ -45,10 +45,15 @@ paper: https://openaccess.thecvf.com/content_cvpr_2018/papers/Chen_CartoonGAN_Ge
 helpful resources: https://blog.tensorflow.org/2020/09/how-to-create-cartoonizer-with-tf-lite.html
 
 ## StyleGAN2
+
 there are two API for the feature 
 RapidAPI: https://rapidapi.com/toonify-toonify-default/api/toonify
+
 DeepAI: https://deepai.org/machine-learning-model/toonify
+
 colab: https://colab.research.google.com/drive/1s2XPNMwf6HDhrJ1FMwlW1jl-eQ2-_tlk?usp=sharing
+
 paper: https://paperswithcode.com/method/stylegan2
+
 ![image](https://user-images.githubusercontent.com/60838458/126884084-22b51924-3f07-4a01-a76c-dcad8e6fd4fb.png)
 
