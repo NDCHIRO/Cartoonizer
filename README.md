@@ -117,5 +117,5 @@ deep learning principles.
 GANs in Action.
 
 ## note
-if you are egyption or someone who can't open medium website you can use this extension:
+if you are egyptian or someone who can't open medium website you can use this extension:
 https://chrome.google.com/webstore/detail/browsec-vpn-free-vpn-for/omghfjlpggmjjaagoclmmobgdodcjboh?hl=en
