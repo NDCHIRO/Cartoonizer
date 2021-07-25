@@ -46,7 +46,10 @@ helpful resources: https://blog.tensorflow.org/2020/09/how-to-create-cartoonizer
 
 ## StyleGAN2
 
+the classic StyleGAN model which is trained on photos of people’s faces. This was released with the StyleGAN2 code and paper and produces pretty fantastically high-quality results.
+the faces model were fine-tuned on a dataset of various characters from animated films. It’s only around 300 images but enough for the model to start learning what features these characters typically have.
 there are two API for the feature 
+
 RapidAPI: https://rapidapi.com/toonify-toonify-default/api/toonify
 
 DeepAI: https://deepai.org/machine-learning-model/toonify
