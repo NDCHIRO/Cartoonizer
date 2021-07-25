@@ -60,3 +60,24 @@ paper: https://paperswithcode.com/method/stylegan2
 
 ![image](https://user-images.githubusercontent.com/60838458/126884084-22b51924-3f07-4a01-a76c-dcad8e6fd4fb.png)
 
+
+## CycleGAN
+The model was built same as the model architecture described in the official cycleGAN paper and used across a range of image-to-image translation tasks.
+The implementation used the Keras deep learning framework based directly on the model described in the paper and implemented in the author’s codebase, designed to take and generate color images with the size 256×256 pixels. The architecture is comprised of four models, two discriminator models, and two generator models.
+
+my colab training: https://colab.research.google.com/drive/10ZOGAcqytp2wm-e9wk7vGvwAwBsMcsyv#scrollTo=bKgkrXgvc5If
+
+drive link for tflite model: https://drive.google.com/drive/folders/1fr60j9GaVp0j3Ccl40X0fHDQb45ytCdD?usp=sharing
+
+refrence that i followed: https://machinelearningmastery.com/cyclegan-tutorial-with-keras/
+
+paper: https://arxiv.org/abs/1703.10593
+
+CycleGAN github: https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix
+
+book reference that hepls me alot to under stand cycleGAN: GANs in action
+
+book link: https://www.amazon.com/GANs-Action-learning-Generative-Adversarial/dp/1617295566
+
+##Style transfer
+
