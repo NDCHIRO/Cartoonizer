@@ -79,5 +79,22 @@ book reference that hepls me alot to under stand cycleGAN: GANs in action
 
 book link: https://www.amazon.com/GANs-Action-learning-Generative-Adversarial/dp/1617295566
 
-##Style transfer
+## Style transfer
+style transfer model from TensorFlow lite was used in the project as a trained model for the application.
 
+tensorFlow lite for style transfer: https://www.tensorflow.org/tutorials/generative/style_transfer
+
+model link: https://www.tensorflow.org/lite/examples/style_transfer/overview
+
+![image](https://user-images.githubusercontent.com/60838458/126884294-be707361-d415-4bc1-a1e6-065e1ee258ab.png)
+
+
+output:
+
+![image](https://user-images.githubusercontent.com/60838458/126884297-f97f4baa-e47f-4f56-9170-0dc294fa4ad5.png)
+
+
+## Filters
+filters library: https://github.com/nekocode/CameraFilter
+
+![image](https://user-images.githubusercontent.com/60838458/126884326-a1d4eee6-5dc7-425a-befb-7de0a6d6126f.png)
