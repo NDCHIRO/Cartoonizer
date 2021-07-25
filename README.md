@@ -98,3 +98,21 @@ output:
 filters library: https://github.com/nekocode/CameraFilter
 
 ![image](https://user-images.githubusercontent.com/60838458/126884326-a1d4eee6-5dc7-425a-befb-7de0a6d6126f.png)
+
+
+## things that helped me in general
+1- courses:
+
+Neural Networks and Deep Learning: https://www.coursera.org/learn/neural-networks-deep-learning
+
+Convolutional Neural Networks: https://www.coursera.org/learn/convolutional-neural-networks
+
+Neural Style Transfer with TensorFlow: https://www.coursera.org/projects/neural-style-transfer
+
+2- books:
+deep learning principles.
+GANs in Action.
+
+## note
+if you are egyption or someone who can't open medium website you can use this extension:
+https://chrome.google.com/webstore/detail/browsec-vpn-free-vpn-for/omghfjlpggmjjaagoclmmobgdodcjboh?hl=en
