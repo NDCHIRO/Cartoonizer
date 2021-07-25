@@ -17,13 +17,13 @@ drive: https://drive.google.com/drive/folders/1jNj-ao5Ybb5HxuKZ3ZFKmmn04Sx2aOsv?
 ## Build and run
 * Clone the project repo:  
 `git clone https://github.com/margaretmz/CartoonGAN-e2e-tflite-tutorial.git`  
-* Open the Android code android/selfie2anime in Android Studio.
+* Open the  code in Android Studio.
 * Connect your Android device to computer then click on `"Run -> Run 'app'`.
 * Once the app is launched on device, grant camera permission.
 * sign up to launch the app.
-* select the type you want (cycleGAN , styleGAN2 , cycleGAN).
-* Take a selfie or a photo and wait to process the selfie. 
-* You will then see a screen with both the selfie and anime image.
+* select the type you want (cartoonGAN , styleGAN2 , style transfer, filters).
+* Take a selfie or a photo and wait to process. 
+
 
 ## features
 1- cartoonGAN
